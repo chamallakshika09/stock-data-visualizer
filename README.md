@@ -1,30 +1,100 @@
-# React + TypeScript + Vite
+# Stock Data Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application built with Vite and TypeScript, styled with Tailwind CSS. It fetches and displays stock data using the Alpha Vantage API and is deployed on GitHub Pages.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches intra day stock data using the Alpha Vantage API.
+- Displays data in both chart (candlestick and volume) and table formats.
+- Allows the user to select the stock symbol, view mode (chart or data), and time interval.
+- Implements efficient data fetching, caching, and error handling.
+- Responsive design with Tailwind CSS.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1.  **Clone the repository:**
 
-- Configure the top-level `parserOptions` property like this:
+    ```bash
+    git clone https://github.com/chamallakshika09/stock-data-visualizer.git
+    cd stock-data-visualizer
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2.  **Install dependencies:**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+
+    - Copy the .env.sample file to .env:
+
+      ```bash
+      cp .env.sample .env
+      ```
+
+    - Edit the .env file and add your Alpha Vantage API key and base URL:
+
+      ```bash
+      VITE_APP_API_KEY=your_alpha_vantage_api_key
+      VITE_APP_BASE_URL=https://www.alphavantage.co/query
+      ```
+
+## Running the App
+
+1. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+2. **Open the app in your browser:**
+
+   Visit `http://localhost:3000` to see your app in action.
+
+## Deployment
+
+This app is deployed using GitHub Pages. To deploy your own version:
+
+1. **Build the app:**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages:**
+
+   ```bash
+   npm run deploy
+   ```
+
+The app will be available at `https://chamallakshika09.github.io/stock-data-visualizer`.
+
+## Usage
+
+1. **Search for a stock symbol:**
+
+   Use the search bar to enter a stock symbol (e.g., `AAPL` for Apple Inc.).
+
+2. **Select view mode:**
+
+   Use the "View" dropdown to switch between chart view and data view.
+
+3. **Select time interval:**
+
+   Use the "Interval" dropdown to select the time interval for the data (e.g., `1min`, `5min`, `15min`).
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
+
+## Acknowledgements
+
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Alpha Vantage](https://www.alphavantage.co/)
